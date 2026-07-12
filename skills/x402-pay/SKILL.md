@@ -1,5 +1,5 @@
 ---
-name: x402-payments
+name: x402-pay
 description: Use this skill WHENEVER the user asks the agent to access, fetch, buy, or call a paid / paywalled / metered / x402-gated HTTP endpoint or API, or when a fetch returns HTTP 402 Payment Required. Treat "pay for this API", "this endpoint needs payment", "buy access to X", "it returned 402", "purchase this data", "call the paid API", "settle the micropayment", "pay with USDC/x402" as matches. Covers the `x402_pay` MCP tool (fetch → auto-pay a 402 → retry), spending guardrails, wallet setup, and the non-custodial safety model. NOT for accepting payments on YOUR api (that is the merchant SDK, not this plugin).
 disable-model-invocation: false
 ---
