@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "x402-pay": {
+      "command": "npx",
+      "args": ["-y", "@cryptoapis-io/mcp-x402-pay"],
+      "env": {
+        "CRYPTOAPIS_API_KEY": "${CRYPTOAPIS_API_KEY}",
+        "X402_WALLET_ID": "${X402_WALLET_ID}",
+        "X402_PRIVATE_KEY": "${X402_PRIVATE_KEY}"
+      }
+    }
+  }
+}

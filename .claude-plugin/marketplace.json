@@ -1,0 +1,17 @@
+{
+  "name": "x402-payments",
+  "owner": {
+    "name": "CryptoAPIs",
+    "url": "https://developers.cryptoapis.io"
+  },
+  "plugins": [
+    {
+      "name": "x402-payments",
+      "source": "./",
+      "description": "Give your agent the ability to pay for x402-gated HTTP endpoints — fetch a URL, auto-pay a 402 by signing locally, and retry. Non-custodial, with spending guardrails."
+    }
+  ],
+  "metadata": {
+    "description": "CryptoAPIs x402 payments for AI agents — the x402_pay tool + a spending-guardrails skill."
+  }
+}

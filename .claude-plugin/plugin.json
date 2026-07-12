@@ -1,0 +1,16 @@
+{
+  "name": "x402-payments",
+  "version": "0.1.0",
+  "description": "Give your agent the ability to pay for x402-gated HTTP endpoints. Bundles the CryptoAPIs x402_pay MCP tool (fetch a URL, auto-pay a 402 by signing locally, retry) plus a skill with spending guardrails and wallet setup. Non-custodial — keys stay on your machine.",
+  "keywords": ["x402", "payments", "micropayments", "usdc", "stablecoin", "agent", "cryptoapis", "mcp"],
+  "author": {
+    "name": "Crypto APIs, Inc.",
+    "url": "https://developers.cryptoapis.io"
+  },
+  "homepage": "https://developers.cryptoapis.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CryptoAPIs-io/x402-agent-plugin.git"
+  },
+  "license": "MIT"
+}
