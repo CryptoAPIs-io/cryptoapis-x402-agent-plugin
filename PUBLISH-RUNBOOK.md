@@ -33,8 +33,9 @@ with npm access to the `@cryptoapis-io` org.
    changeset `ignore` already. Bump + `pnpm publish --filter @cryptoapis-io/mcp-x402-pay --no-git-checks
    --access public` (see the mcp repo CLAUDE.md "Release Workflow"; needs `npm login`). Then register
    it in the MCP registry via the OIDC workflow (`gh workflow run publish-registry.yml … -f packages=mcp-x402-pay`).
-4. **`x402-agent-plugin`** — no npm publish; it's a Claude-plugin marketplace repo. Once its deps
-   (steps 1–3) are live, it works for the public: `/plugin marketplace add CryptoAPIs-io/x402-agent-plugin`
+4. **`cryptoapis-x402-agent-plugin`** (plugin installed name: `x402`) — no npm publish; it's a
+   Claude-plugin marketplace repo. Once its deps
+   (steps 1–3) are live, it works for the public: `/plugin marketplace add CryptoAPIs-io/cryptoapis-x402-agent-plugin`
    → `/plugin install x402`. Cut a GitHub Release `v0.2.0` (tag already pushed) to mark it.
 
 ## Pre-publish requirements (one-time per SDK repo)

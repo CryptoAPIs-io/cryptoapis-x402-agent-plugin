@@ -10,7 +10,7 @@
   "homepage": "https://developers.cryptoapis.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CryptoAPIs-io/x402-agent-plugin.git"
+    "url": "https://github.com/CryptoAPIs-io/cryptoapis-x402-agent-plugin.git"
   },
   "license": "MIT"
 }

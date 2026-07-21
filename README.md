@@ -21,7 +21,7 @@ API" (merchant).
 ## Install
 
 ```
-/plugin marketplace add CryptoAPIs-io/x402-agent-plugin
+/plugin marketplace add CryptoAPIs-io/cryptoapis-x402-agent-plugin
 /plugin install x402
 ```
 
