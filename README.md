@@ -33,7 +33,7 @@ Set your buyer credentials once (they stay out of chat + tool logs):
 
 ```bash
 export CRYPTOAPIS_API_KEY="…"     # CryptoAPIs key with the X402_BUYER feature
-export X402_WALLET_ID="…"         # the agent wallet to pay from
+export X402_WALLET_ID="…"         # wallet RECORD id from POST /wallets (a registry _id, NOT the chain address)
 export X402_PRIVATE_KEY="0x…"     # that wallet's EVM key — signs locally, never sent
 ```
 

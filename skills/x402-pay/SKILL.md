@@ -28,7 +28,7 @@ The tool needs three credentials, read from env by default (so you never type a 
 | Env var | What |
 |---|---|
 | `CRYPTOAPIS_API_KEY` | a CryptoAPIs API key with the **X402_BUYER** feature |
-| `X402_WALLET_ID` | the CryptoAPIs agent wallet to pay from |
+| `X402_WALLET_ID` | the buyer-service wallet **record id** from `POST /wallets` (a registry `_id`) — **NOT the on-chain address** (an address → `wallet_not_found`) |
 | `X402_PRIVATE_KEY` | that wallet's EVM private key (signs locally, never sent) |
 
 If they aren't set, `x402_pay` returns a clear `missing credentials` message — tell the user which env
