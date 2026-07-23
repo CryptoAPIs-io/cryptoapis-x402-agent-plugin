@@ -35,6 +35,26 @@ If they aren't set, `x402_pay` returns a clear `missing credentials` message —
 vars to set (in the plugin's MCP config or their shell). **Do not ask the user to paste a private key into
 the chat** — env vars keep it out of the transcript and tool logs.
 
+## First-time setup — create the agent wallet (`X402_WALLET_ID`)
+
+`X402_WALLET_ID` refers to a CryptoAPIs **agent wallet** that must be created ONCE per blockchain+network
+before any payment. If the user doesn't have one, create it with a single `POST` (non-custodial — only the
+PUBLIC address is registered):
+
+```bash
+curl -X POST https://ai.cryptoapis.io/x402/buyer/wallets \
+  -H "x-api-key: $CRYPTOAPIS_API_KEY" -H "content-type: application/json" \
+  -d '{"blockchain":"base","network":"eip155:8453","address":"0xUserPublicAddress"}'
+# → { "walletId": "…" }   ← set this as X402_WALLET_ID
+```
+
+Rules (a bad body returns a clear `400 malformed_request` — read the message and fix the named field):
+- **`network` MUST be the CAIP-2 id** — `eip155:8453` (Base), `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp`
+  (Solana mainnet), etc. **Never** a bare `"base"`/`"mainnet"`.
+- **Exactly one** of `address` (works everywhere; **required for Solana & Kaspa**) or `xpub`
+  (xpub-capable chains only). Neither/both → `400`.
+- The wallet's chain must match where you'll pay; the `address` is the public address holding the funds.
+
 ## Spending guardrails — IMPORTANT
 
 Real money moves. Behave conservatively:
@@ -61,5 +81,6 @@ Real money moves. Behave conservatively:
 ## How it works (for transparency)
 
 On a 402: parse the price → authorize via the CryptoAPIs buyer service → **sign locally** with your key →
-retry with an `X-PAYMENT` header. The facilitator verifies + settles on-chain. v1 pays the EVM `eip712`
-scheme (e.g. Base USDC). See the [README](../../README.md) and https://developers.cryptoapis.io.
+retry with an `X-PAYMENT` header. The facilitator verifies + settles on-chain. Supported today: **EVM**
+(`eip712`, e.g. Base USDC) and **Solana**; Tron/UTXO/XRP/Kaspa are upcoming (a payment on them returns a
+clear `family_not_yet_supported`). See the [README](../../README.md) and https://developers.cryptoapis.io.
