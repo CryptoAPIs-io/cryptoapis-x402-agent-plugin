@@ -6,7 +6,12 @@
       "env": {
         "CRYPTOAPIS_API_KEY": "${CRYPTOAPIS_API_KEY}",
         "X402_WALLET_ID": "${X402_WALLET_ID}",
-        "X402_PRIVATE_KEY": "${X402_PRIVATE_KEY}"
+        "X402_PRIVATE_KEY": "${X402_PRIVATE_KEY}",
+        "X402_SVM_SECRET": "${X402_SVM_SECRET}",
+        "X402_TRON_KEY": "${X402_TRON_KEY}",
+        "X402_UTXO_WIF": "${X402_UTXO_WIF}",
+        "X402_KASPA_KEY": "${X402_KASPA_KEY}",
+        "X402_XRP_SEED": "${X402_XRP_SEED}"
       }
     }
   }

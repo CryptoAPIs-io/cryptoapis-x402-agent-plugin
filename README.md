@@ -37,6 +37,19 @@ export X402_WALLET_ID="…"         # wallet RECORD id from POST /wallets (a reg
 export X402_PRIVATE_KEY="0x…"     # that wallet's EVM key — signs locally, never sent
 ```
 
+Paying on a **non-EVM chain** (Solana / Tron / UTXO / Kaspa / XRP)? Set the matching secret the same way,
+so it's read from the environment and never passed as a (logged) tool argument:
+
+```bash
+export X402_SVM_SECRET="…"        # Solana secret key (base58, 64-byte keypair secret)
+export X402_TRON_KEY="…"          # Tron private key (hex; falls back to X402_PRIVATE_KEY — same curve)
+export X402_UTXO_WIF="…"          # UTXO WIF (bitcoin/ltc/doge/dash/bch/zcash)
+export X402_KASPA_KEY="…"         # Kaspa private key (hex, 32 bytes)
+export X402_XRP_SEED="…"          # XRP seed (base58, s…)
+```
+
+You only need the secret(s) for the chain(s) you actually pay on — unset ones are simply ignored.
+
 Then just ask:
 
 > **You:** Fetch `https://api.example.com/premium` for me.

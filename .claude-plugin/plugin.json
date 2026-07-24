@@ -1,6 +1,6 @@
 {
   "name": "x402",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "x402 payments for AI agents — both sides. BUY: the x402_pay tool fetches a URL and auto-pays a 402 by signing locally (non-custodial), with spending guardrails. SELL: a skill that helps you integrate the CryptoAPIs x402 merchant SDK to charge for your own API. By CryptoAPIs.",
   "keywords": ["x402", "payments", "micropayments", "usdc", "stablecoin", "agent", "merchant", "cryptoapis", "mcp"],
   "author": {
